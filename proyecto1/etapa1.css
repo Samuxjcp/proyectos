@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+    background-color: #f3f3f3;
+}
+
+.profile {
+    margin: auto;
+    margin-top: 200px;
+    width: 50%;
+    height: 50vh;
+    display: flex;
+    box-shadow: 0 1px 20px 0 rgba(69, 90, 100, .08);
+}
+
+.profile__left {
+    width: 35%;
+    background: linear-gradient(to right, #01a9ac, #01dbdf);
+    padding: 30px 50px;
+    text-align: center;
+    color: #fff;
+}
+
+.profile__left img {
+    border-radius: 100%;
+    margin-bottom: 10px;
+    width: 250px;
+    
+}
+
+.profile h4 {
+    margin-bottom: 10px;
+}
+
+.profile p {
+    font-size: 14px;
+}
+
+.profile__right {
+    width: 65%;
+    background: #fff;
+    padding: 25px 30px;
+
+}
+
+.profile__right .profile__info,
+.profile__skills {
+    margin-bottom: 25px;
+}
+
+.profile__right .profile__info h3,
+.profile__skills h3 {
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e0e0e0;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.profile__info--data,
+.profile__info--data{
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile__info--data .profile__data,
+.profile__info--data .profile__data {
+    width: 45%;
+}
+
+.profile__info h4,
+.profile__skills h4 {
+    font-size: 20px;
+    margin-bottom: 6px;
+    color: #353c4e;
+}
+
+.profile__info p,
+.profile__skills p {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #74889f;
+}
+
+.profile__networks ul{
+    display: flex;
+}
+
+.profile__networks ul li {
+    /*width: 45px;
+    height: 45px;
+    background: linear-gradient(to right, #01a9ac, #01dbdf);
+    margin-right: 10px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 45px; esta es otra forma*/
+    padding: 14px 20px;
+    background: linear-gradient(to right, #01a9ac, #01dbdf);
+    margin-right: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profile__networks ul li a {
+    color: #fff;
+    
+}
+
