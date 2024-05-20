@@ -1,0 +1,53 @@
+body {
+    background-image: url(https://s1.1zoom.me/b5050/669/USA_Mountains_479558_3840x2160.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.container {
+    background-color: white;
+        width: 25%;
+        height: 40vh;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    text-align: center;
+    margin-top: 250px;
+    border-radius: 20px;
+    box-shadow: 4px 8px 12px black ;
+}
+
+.text {
+    width:65%;
+    font-size: 18px;
+    border: none;
+    background-color: rgb(180, 183, 185);
+    opacity: 0.7;
+    padding: 16px 32px;
+    color: white;
+    border-radius: 12px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.login {
+    width: 80%;
+    font-size: 18px;
+    border: none;
+    background-color: rgb(0, 162, 255);
+    opacity: 0.7;
+    padding: 16px 32px ;
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+    
+
+}
+
+a {
+    text-decoration: none;
+    color:rgb(0, 162, 255);;
+}
