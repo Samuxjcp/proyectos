@@ -1,0 +1,26 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.carrito {
+  background-color: rgb(22, 22, 22);
+  height: 100px;
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.carrito_tittle {
+    color: white;
+    
+}
+
+.carrito_icon {
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}

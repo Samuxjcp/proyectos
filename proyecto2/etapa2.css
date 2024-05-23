@@ -1,14 +1,19 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 body {
     background-image: url(https://s1.1zoom.me/b5050/669/USA_Mountains_479558_3840x2160.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
+    font-family: "Lato", sans-serif;
+    
 }
 
 .container {
     background-color: white;
-        width: 25%;
+        width: 30%;
         height: 40vh;
         margin: auto;
         display: flex;
@@ -18,6 +23,11 @@ body {
     margin-top: 250px;
     border-radius: 20px;
     box-shadow: 4px 8px 12px black ;
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .text {
@@ -31,6 +41,7 @@ body {
     border-radius: 12px;
     color: black;
     margin-bottom: 20px;
+    
 }
 
 .login {
@@ -43,6 +54,7 @@ body {
     color: white;
     border-radius: 12px;
     cursor: pointer;
+    
     
 
 }
@@ -64,3 +76,15 @@ a {
     opacity: 0;
     transition: all .5s;
 }
+
+@media (max-width: 1250px) {
+    .container{
+        width: 40%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container{
+        width: 60%;
+    }
+  }
