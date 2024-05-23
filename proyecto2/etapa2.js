@@ -1,19 +1,29 @@
-const email = document.querySelector("#name")
-const password = document.querySelector("#password")
-const formulario = document.querySelector(".form")
-const aviso = document.querySelector(".aviso")
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const form = document.getElementById("form");
+const aviso = document.getElementById("aviso");
+const avisoCorrecto = document.getElementById("avisoCorrecto")
 
-formulario.addEventListener("submit", e => {
-    e.preventDefault()
-    if (!email.value.includes ("@gmail.com")){
-        mostrarAviso("Correo Incorrecto")
+form.addEventListener("submit", e => {
+    e.preventDefault();
+    let warnings = "";
+    let entrar = false;
+    let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    aviso.innerHTML = "";
+
+    if (!regexEmail.test(email.value)) {
+        warnings += `El correo electrónico no es válido.<br>`;
+        entrar = true;
     }
-})
 
-function mostrarAviso(texto) {
-    aviso.style.opacity = 1
-    aviso.innerText=texto
-    setTimeout(() => {
-        aviso.style.opacity = 0
-    }, 2000)
-}
+    if (password.value.length < 8) {
+        warnings += `La contraseña debe tener al menos 8 caracteres.<br>`;
+        entrar = true;
+    }
+
+    if (entrar) {
+        aviso.innerHTML = warnings;
+    } else {
+        avisoCorrecto.innerHTML = "Formulario enviado correctamente.";
+    }
+});

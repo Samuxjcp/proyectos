@@ -3,28 +3,28 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="etapa2.css">
 </head>
 
 <body>
     <div class="container">
-
-        <h1>Inicio de sesion</h1>
-        <form class="form">
+        <h1>Inicio de sesión</h1>
+        <form class="form" id="form">
             <label>
-                <input type="email" id="name" placeholder="Nombre " class="text">
+                <input type="email" id="email" placeholder="Correo electrónico" class="text">
             </label>
             <label>
-                <input type="password" id="password" placeholder="contraseña" class="text">
+                <input type="password" id="password" placeholder="Contraseña" class="text">
             </label>
-
-            <button type="submit" class="login">Iniciar Sesion</button>
-            <p>No estas registrado?</p><a href="">create una cuenta</a>
+            <button type="submit" class="login" id="login">Iniciar Sesión</button>
+            <p class="aviso" id="aviso"></p>
+            <p class="avisoCorrecto" id="avisoCorrecto"></p>
+            <p>No estás registrado?</p><a href="#">Crea una cuenta</a>
         </form>
     </div>
-    <p class="aviso">aviso</p>
+
     <script src="etapa2.js"></script>
 </body>
 
