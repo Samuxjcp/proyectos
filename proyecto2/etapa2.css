@@ -9,7 +9,7 @@ body {
 .container {
     background-color: white;
         width: 30%;
-        height: 50vh;
+        height: 45vh;
         margin: auto;
         display: flex;
         flex-direction: column;
@@ -57,14 +57,15 @@ a {
     text-align: center;
     margin: auto;
     color: #f50c0c;
-    padding-top: 20px;
+    padding-top: 5px;
 }
 .avisoCorrecto {
     width: 200px;
         text-align: center;
         margin: auto;
         color: rgb(13, 191, 13);
-        padding-top: 20px;
+        padding-top: 5px;
+        
 }
 
 @media (max-width: 1250px) {
