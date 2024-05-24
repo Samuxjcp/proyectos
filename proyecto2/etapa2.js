@@ -9,11 +9,6 @@ const avisoCorrecto = document.getElementById("avisoCorrecto");
 form.addEventListener("submit", e => {
     e.preventDefault(); // Previene el comportamiento por defecto del formulario (recargar la página).
 
-    /*form.addEventListener("submit", function (evento)*/ 
-    
-    // Variables para almacenar mensajes de advertencia y una bandera para saber si hay errores.
-    let warnings = "";
-    let entrar = false;
     // Expresión regular para validar el formato del correo electrónico.
     let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
@@ -22,26 +17,27 @@ form.addEventListener("submit", e => {
     avisoCorrecto.innerHTML = "";
 
     // Valida el correo electrónico usando la expresión regular.
-    if (!regexEmail.test(email.value)) {
-        warnings += `El correo electrónico no es válido.`;
-        entrar = true; // Indica que hay un error.
-    }
+    if (!regexEmail.test(email.value))
+        return mostrarError(`El correo electrónico no es válido.`)
+
 
     // Valida que la contraseña tenga al menos 8 caracteres.
     if (password.value.length < 8) {
-        warnings += `La contraseña debe tener al menos 8 caracteres.`;
-        entrar = true; // Indica que hay un error.
+       return mostrarError("La constraseña no es valida debe tener al menos 8 digitos")
     }
 
-    // Si hay errores, muestra los mensajes de advertencia.
-    if (entrar) {
-        aviso.innerHTML = warnings;
-    } else {
-        // Si no hay errores, muestra un mensaje de éxito.
-        avisoCorrecto.innerHTML = "Formulario enviado correctamente.";
-        // Borra el mensaje de éxito después de 2 segundos.
-        setTimeout(() => {
-            avisoCorrecto.innerHTML = "";
-        }, 2000);
-    }
+    mostrarConfirmacion("Forumulario enviado correctamente")
 });
+
+
+function mostrarError(mensaje) {
+    aviso.innerHTML = mensaje
+}
+
+function mostrarConfirmacion (mensaje){
+    avisoCorrecto.innerHTML=mensaje 
+
+    setTimeout(() => {
+        avisoCorrecto.innerHTML = "";
+    }, 2000);
+}
