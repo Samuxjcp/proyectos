@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -99,8 +104,12 @@ h2 {
     /* Darker green */
 }
 
+.add-to-cart button:disabled {
+    filter: brightness(50%);
+}
+
 .sidebar{
-    display: none;
+    display: flex;
     position: fixed;
     inset: 0;
     background-color:rgba(0,0,0, 0.75);
@@ -110,6 +119,113 @@ h2 {
 }
 
 .carrito_items {
-    width: 400px;
+    padding: 25px;
+    width: 30vw;
     background-color: rgb(65, 65, 65);
+    
 }
+
+.sidebar_tittle {
+    text-align: center;
+}
+
+.button_exit {
+position: absolute;
+top: 0;
+right: 0;
+padding: 15px;
+font-size: 30px;
+border-radius: 0px 0px 0px 24px ;
+border: none;
+background-color: red;
+display: grid;
+place-content: center;
+cursor: pointer;
+}
+
+.button_exit:hover{
+filter: brightness(80%);
+}
+.hidden {
+    display: none;
+}
+
+.sidebar_article {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  
+    background-color: rgb(139, 139, 139);
+    border-radius: 24px;
+  }
+  
+  .image-contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .image-contenedor img {
+    width: 100px;
+  }
+  
+  
+  .article_info {
+    flex-grow: 1;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .teclado {
+    margin-bottom: 10px;
+  }
+  
+  .quantity_controls {
+    margin: 10px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .quantity_controls button {
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+  
+    display: grid;
+    place-content: center;
+  
+    border-radius: 999px;
+    border: none;
+    font-weight: 600;
+  
+    background-color: transparent;
+  }
+  
+  .increment {
+    color: green;
+  }
+  
+  .decrement {
+    color: red;
+  }
+  
+  .contenedor-borrar {
+    display: grid;
+    place-content: center;
+  
+    background-color: red;
+    padding: 0px 10px;
+    cursor: pointer;
+    border-radius: 0px 24px 24px 0px;
+  }
+  
+  .contenedor-borrar:hover {
+    filter: brightness(80%);
+  }

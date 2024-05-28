@@ -87,63 +87,140 @@ const productosTecnologicos = [
 ];
 
 
-/*<article class="product">
-    <img src="https://pcgame.ma/wp-content/uploads/2021/02/Logitech-G502-Lightspeed-Wireless-Gaming-Mouse-2.jpg"
-        alt="Ratón Gamer" />
-    <h3 class="product-name">Ratón Gamer</h3>
-    <p class="product-price">precio: $29</p>
-    <div class="add-to-cart">
-        <button>Añadir al carrito</button>
-    </div>
-</article>*/
 
 document.addEventListener("DOMContentLoaded", e => {
-    const carrito = new Carrito()
-    const sections= {
-        teclado:document.getElementById("section_teclados"),
-        mando:document.getElementById("section_mandos"),
-        consola:document.getElementById("section_consolas"),
-        periferico:document.getElementById("section_perifericos")
+    function renderizarProductos() {
+        Object.keys(sections).forEach(section => {
+            sections[section].innerHTML = ""
+        })
+
+        productosTecnologicos.forEach(
+            producto => {
+                console.log(carrito.productoYaEstaCarrito(producto.id))
+
+                const article = document.createElement("article");
+                const img = document.createElement("img");
+                const h3 = document.createElement("h3");
+                const p = document.createElement("p");
+                const div = document.createElement("div");
+                const button = document.createElement("button");
+
+                article.classList.add("product");
+
+                img.setAttribute("src", producto.image);
+                img.setAttribute("alt", producto.name);
+
+                h3.classList.add("product-name");
+                h3.innerText = producto.name;
+
+                p.classList.add("product-price");
+                p.innerText = `Precio: $${producto.price}`;
+
+                div.classList.add("add-to-cart");
+
+                button.innerText = "Añadir al carrito";
+
+                button.disabled = carrito.productoYaEstaCarrito(producto.id)
+
+                button.onclick = () => {
+                    carrito.agregarProducto(producto);
+                    renderizarProductos()
+                }
+
+                article.appendChild(img);
+                article.appendChild(h3);
+                article.appendChild(p);
+                article.appendChild(div);
+                div.appendChild(button);
+
+                console.log(article);
+
+                sections[producto.type.toLowerCase()].appendChild(article);
+
+
+            }
+        );
     }
 
-    productosTecnologicos.forEach(
-        producto => {
+    const carrito = new Carrito()
+    const sections = {
+        teclado: document.getElementById("section_teclados"),
+        mando: document.getElementById("section_mandos"),
+        consola: document.getElementById("section_consolas"),
+        periferico: document.getElementById("section_perifericos")
+    }
+
+    const carritobtn = document.getElementById("carrito_icon")
+    const sidebar = document.getElementById("sidebar")
+
+    const exitbtn = document.getElementById("button_exit")
+
+
+    carritobtn.onclick = () => {
+        sidebar.classList.remove("hidden")
+    }
+
+    exitbtn.onclick = () => {
+        sidebar.classList.add("hidden")
+    }
+
+    renderizarProductos();
+
+    /*<article class="sidebar_article">
+        <div class="image-contenedor">
+            <img src="https://freepngimg.com/thumb/keyboard/20828-2-poseidon-gaming-keyboard-mechanical.png"
+                alt="">
+        </div>
+        <div class="article_info">
+            <h3 >Teclado Mecanico</h3>
+            <p>Precio: $89</p>
+        </div>
+        <div class="quantity_controls">
+           
+                <button class="increment">+</button>
+         
+            <p>1</p>
+            <button class="decrement">-</button>
+        </div>
+        <div class="contenedor-borrar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                <path fill="#000000"
+                    d="M9 3v1H4v2h1v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1V4h-5V3zm0 5h2v9H9zm4 0h2v9h-2z" />
+            </svg>
+        </div>
+    </article>*/
+
+    function renderizarProductosCarrito() {
+        carrito.productos.forEach(producto => {
+
 
             const article = document.createElement("article")
+            const divImg = document.createElement("div")
             const img = document.createElement("img")
-            const h3 = document.createElement("h3")
-            const p = document.createElement("p")
-            const div = document.createElement("div")
-            const button = document.createElement("button")
+            const divInfo = document.createElement("div")
+            const h3Info = document.createElement("h3")
+            const pInfo = document.createElement("p")
+            const divQuantityControls= document.createElement("div")
+            const incrementbtn = document.createElement("button")
+            const pQuantity= document.createElement("p")
+            const decrementbtn = document.createElement("button")
+            const divBorrar = document.createElement("div")
+            
 
-            article.classList.add("product")
+            article.classList.add("sidebar_article")
+            divImg.classList.add("image-contenedor")
 
-            img.setAttribute("src", producto.image)
-            img.setAttribute("alt", producto.name)
-
-            h3.classList.add("product-name")
-            h3.innerText = producto.name
-
-            p.classList.add("product-price")
-            p.innerText = `Precio: $${producto.price}`
-
-            div.classList.add("add-to-cart")
-
-            button.innerText = "Añadir al carrito"
-
-            button.onclick = () => carrito.agregarProducto(producto)
-
-            article.appendChild(img)
-            article.appendChild(h3)
-            article.appendChild(p)
-            article.appendChild(div)
-            div.appendChild(button)
-
-            console.log(article)
-
-            sections[producto.type.toLowerCase()].appendChild(article)
+            img.setAttribute("src", producto.image);
+            img.setAttribute("alt", producto.name);
+            divInfo.classList.add("article_info")
+            divQuantityControls.add("quantity_controls")
+            incrementbtn.add("increment")
 
 
-        }
-    )
+
+        })
+    }
+
 })
+
+

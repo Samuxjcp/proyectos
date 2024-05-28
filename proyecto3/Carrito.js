@@ -5,7 +5,7 @@ class Carrito {
 
     agregarProducto(producto) {
         const p = new Producto({ ...producto })
-        p.setId(this.obtenerUltimoId() + 1)
+        p.setId(producto.id)
         this.productos.push(p)
         console.log(this.productos)
     }
@@ -26,13 +26,9 @@ class Carrito {
 
     }
 
-    obtenerUltimoId() {
-        let ultimoId = 0
-        this.productos.forEach(producto => {
-            if (producto.id > ultimoId) {
-                ultimoId = producto.id
-            }
-        })
-        return ultimoId
+
+
+    productoYaEstaCarrito(id) {
+        return Boolean(this.productos.find((producto) => producto.id === id))
     }
 }
