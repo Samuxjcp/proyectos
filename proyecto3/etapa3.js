@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", e => {
 
         productosTecnologicos.forEach(
             producto => {
-                console.log(carrito.productoYaEstaCarrito(producto.id))
+                //console.log(carrito.productoYaEstaCarrito(producto.id))
 
                 const article = document.createElement("article");
                 const img = document.createElement("img");
@@ -125,6 +125,7 @@ document.addEventListener("DOMContentLoaded", e => {
                 button.onclick = () => {
                     carrito.agregarProducto(producto);
                     renderizarProductos()
+                    renderizarProductosCarrito()
                 }
 
                 article.appendChild(img);
@@ -133,7 +134,7 @@ document.addEventListener("DOMContentLoaded", e => {
                 article.appendChild(div);
                 div.appendChild(button);
 
-                console.log(article);
+                //console.log(article);
 
                 sections[producto.type.toLowerCase()].appendChild(article);
 
@@ -152,6 +153,7 @@ document.addEventListener("DOMContentLoaded", e => {
 
     const carritobtn = document.getElementById("carrito_icon")
     const sidebar = document.getElementById("sidebar")
+    const sectionCarritoProducts = document.getElementById("carrito_products")
 
     const exitbtn = document.getElementById("button_exit")
 
@@ -191,21 +193,22 @@ document.addEventListener("DOMContentLoaded", e => {
     </article>*/
 
     function renderizarProductosCarrito() {
+
+        sectionCarritoProducts.innerHTML=""
+
         carrito.productos.forEach(producto => {
-
-
             const article = document.createElement("article")
             const divImg = document.createElement("div")
             const img = document.createElement("img")
             const divInfo = document.createElement("div")
             const h3Info = document.createElement("h3")
             const pInfo = document.createElement("p")
-            const divQuantityControls= document.createElement("div")
+            const divQuantityControls = document.createElement("div")
             const incrementbtn = document.createElement("button")
-            const pQuantity= document.createElement("p")
+            const pQuantity = document.createElement("p")
             const decrementbtn = document.createElement("button")
             const divBorrar = document.createElement("div")
-            
+
 
             article.classList.add("sidebar_article")
             divImg.classList.add("image-contenedor")
@@ -213,10 +216,52 @@ document.addEventListener("DOMContentLoaded", e => {
             img.setAttribute("src", producto.image);
             img.setAttribute("alt", producto.name);
             divInfo.classList.add("article_info")
-            divQuantityControls.add("quantity_controls")
-            incrementbtn.add("increment")
+            divQuantityControls.classList.add("quantity_controls")
+            incrementbtn.classList.add("increment")
+            incrementbtn.innerText = "+"
+            incrementbtn.onclick = () => {
+                 producto.aumentarCantidad()
+                 renderizarProductosCarrito()
+            }
+               
+
+            pQuantity.innerText = producto.quantity
+
+            decrementbtn.classList.add("decrement")
+            decrementbtn.innerText = "-"
+            decrementbtn.onclick = () => {
+                producto.disminuirCantidad()
+                renderizarProductosCarrito()
+           }
+            divBorrar.classList.add("contenedor-borrar")
+
+            h3Info.innerText = producto.name
+            pInfo.innerText = `Precio: ${producto.price}`
+
+            divBorrar.onclick=()=> {
+                carrito.eliminarProducto(producto.id)
+                renderizarProductos()
+                renderizarProductosCarrito()
+            }
 
 
+            article.appendChild(divImg);
+            divImg.appendChild(img)
+            article.appendChild(divInfo)
+            divInfo.appendChild(h3Info)
+            divInfo.appendChild(pInfo)
+            article.appendChild(divQuantityControls)
+            divQuantityControls.appendChild(incrementbtn)
+            divQuantityControls.appendChild(pQuantity)
+            divQuantityControls.appendChild(decrementbtn)
+            article.appendChild(divBorrar)
+            divBorrar.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+            <path fill="#000000"
+                d="M9 3v1H4v2h1v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1V4h-5V3zm0 5h2v9H9zm4 0h2v9h-2z" />
+        </svg>`
+        console.log(article)
+
+            sectionCarritoProducts.appendChild(article)
 
         })
     }

@@ -18,5 +18,8 @@ class Producto {
 
     disminuirCantidad() {
         this.quantity--
+        if(this.quantity===0){
+            this.quantity=1
+        }
     }
 }

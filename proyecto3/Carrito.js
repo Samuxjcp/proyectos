@@ -11,15 +11,7 @@ class Carrito {
     }
 
     eliminarProducto(id) {
-
-    }
-
-    aumentarCantidad(id) {
-
-    }
-
-    disminuirCantidad(id) {
-
+        this.productos = this.productos.filter((producto) => producto.id !== id)
     }
 
     calcularTotalCompra() {

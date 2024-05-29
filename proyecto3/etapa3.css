@@ -108,124 +108,154 @@ h2 {
     filter: brightness(50%);
 }
 
-.sidebar{
-    display: flex;
-    position: fixed;
-    inset: 0;
-    background-color:rgba(0,0,0, 0.75);
-    
-    justify-content: flex-end;
-
+.sidebar {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  justify-content: flex-end;
+  
 }
 
 .carrito_items {
-    padding: 25px;
-    width: 30vw;
-    background-color: rgb(65, 65, 65);
-    
+  padding: 25px;
+  width: 30vw;
+  background-color: #414141;
+  overflow-y: scroll;
+  border-radius: 24px 0px 0px 24px;
 }
 
 .sidebar_tittle {
-    text-align: center;
+  text-align: center;
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 20px;
 }
 
 .button_exit {
-position: absolute;
-top: 0;
-right: 0;
-padding: 15px;
-font-size: 30px;
-border-radius: 0px 0px 0px 24px ;
-border: none;
-background-color: red;
-display: grid;
-place-content: center;
-cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 15px;
+  font-size: 30px;
+  border-radius: 0 0 0 24px;
+  border: none;
+  background-color: #ff4c4c;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  color: #fff;
 }
 
-.button_exit:hover{
-filter: brightness(80%);
+.button_exit:hover {
+  filter: brightness(80%);
 }
+
 .hidden {
-    display: none;
+  display: none;
 }
 
 .sidebar_article {
-    margin: 20px;
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-  
-    background-color: rgb(139, 139, 139);
-    border-radius: 24px;
-  }
-  
-  .image-contenedor {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .image-contenedor img {
-    width: 100px;
-  }
-  
-  
-  .article_info {
-    flex-grow: 1;
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: #8b8b8b;
+  border-radius: 24px;
+  padding: 10px;
+  align-items: center;
+}
 
-  .teclado {
-    margin-bottom: 10px;
-  }
-  
-  .quantity_controls {
-    margin: 10px;
-  
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-  }
-  
-  .quantity_controls button {
-    font-size: 30px;
-    width: 40px;
-    height: 40px;
-  
-    display: grid;
-    place-content: center;
-  
-    border-radius: 999px;
-    border: none;
-    font-weight: 600;
-  
-    background-color: transparent;
-  }
-  
-  .increment {
-    color: green;
-  }
-  
-  .decrement {
-    color: red;
-  }
-  
-  .contenedor-borrar {
-    display: grid;
-    place-content: center;
-  
-    background-color: red;
-    padding: 0px 10px;
-    cursor: pointer;
-    border-radius: 0px 24px 24px 0px;
-  }
-  
-  .contenedor-borrar:hover {
-    filter: brightness(80%);
-  }
+.image-contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-contenedor img {
+  width: 100px;
+  border-radius: 12px;
+}
+
+.article_info {
+  flex-grow: 1;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.quantity_controls {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.quantity_controls button {
+  font-size: 24px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  border: none;
+  font-weight: 600;
+  background-color: #3a3a3a;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.quantity_controls button:hover {
+  background-color: #575757;
+}
+
+.increment {
+  color: #00ff00;
+}
+
+.decrement {
+  color: #ff0000;
+}
+
+.contenedor-borrar {
+  display: grid;
+  place-content: center;
+  background-color: #ff4c4c;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 24px;
+  transition: background-color 0.3s;
+}
+
+.contenedor-borrar:hover {
+  background-color: #e04545;
+}
+
+.container_comprar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#button_comprar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 24px;
+  color: #fff;
+  background-color: #00b300;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#button_comprar:hover {
+  background-color: #008f00;
+}
