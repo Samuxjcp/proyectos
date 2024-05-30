@@ -15,7 +15,13 @@ class Carrito {
     }
 
     calcularTotalCompra() {
-        
+        let suma = 0
+
+
+        this.productos.forEach(({ price, quantity }) => {
+            suma += price * quantity
+        })
+        return suma
     }
 
 

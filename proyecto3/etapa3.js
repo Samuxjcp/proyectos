@@ -157,13 +157,17 @@ document.addEventListener("DOMContentLoaded", e => {
 
     const exitbtn = document.getElementById("button_exit")
 
-
+    const btnComprar = document.getElementById("button_comprar")
     carritobtn.onclick = () => {
         sidebar.classList.remove("hidden")
     }
 
     exitbtn.onclick = () => {
         sidebar.classList.add("hidden")
+    }
+
+    btnComprar.onclick = ()=> {
+        alert (carrito.calcularTotalCompra())
     }
 
     renderizarProductos();
