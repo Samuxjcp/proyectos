@@ -168,30 +168,6 @@ document.addEventListener("DOMContentLoaded", e => {
 
     renderizarProductos();
 
-    /*<article class="sidebar_article">
-        <div class="image-contenedor">
-            <img src="https://freepngimg.com/thumb/keyboard/20828-2-poseidon-gaming-keyboard-mechanical.png"
-                alt="">
-        </div>
-        <div class="article_info">
-            <h3 >Teclado Mecanico</h3>
-            <p>Precio: $89</p>
-        </div>
-        <div class="quantity_controls">
-           
-                <button class="increment">+</button>
-         
-            <p>1</p>
-            <button class="decrement">-</button>
-        </div>
-        <div class="contenedor-borrar">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                <path fill="#000000"
-                    d="M9 3v1H4v2h1v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1V4h-5V3zm0 5h2v9H9zm4 0h2v9h-2z" />
-            </svg>
-        </div>
-    </article>*/
-
     function renderizarProductosCarrito() {
 
         sectionCarritoProducts.innerHTML=""
