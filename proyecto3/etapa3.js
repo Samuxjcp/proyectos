@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", e => {
 
     btnComprar.onclick = ()=> {
         if (pTotal.style.display=== "none"){
-            pTotal.style.display = "block"
+            pTotal.style.display = "flex"
             pTotal.innerText= `El total de compra es : ${carrito.calcularTotalCompra()}`
         } else{
             pTotal.style.display = "none"

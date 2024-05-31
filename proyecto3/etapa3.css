@@ -264,6 +264,7 @@ main.main {
   background-color: #ffd700;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-bottom: 20px;
 }
 
 #button_comprar:hover {
@@ -271,8 +272,73 @@ main.main {
 }
 
 .totalCompra {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
-  
+  font-size: 20px;
+  color: #ffd700;
+  background-color: #000;
+  padding: 10px 20px;
+  border-radius: 24px;
+  margin-top: 10px;
+  border: 2px solid #ffd700;
+  font-weight: bold;
+}
+
+.totalCompra:hover {
+  background-color: #ffbf00;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+@media (max-width: 768px) {
+  .carrito_items {
+    width: 60vw;
+    padding: 20px;
+  }
+
+  .product {
+    flex: 0 0 45%;
+    max-width: 45%;
+  }
+
+  .product-name {
+    font-size: 1.25rem;
+  }
+
+  .product-price {
+    font-size: 1rem;
+  }
+
+  .add-to-cart button {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carrito_items {
+    width: 80vw;
+    padding: 15px;
+  }
+
+  .product {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  .product-name {
+    font-size: 1rem;
+  }
+
+  .product-price {
+    font-size: 0.9rem;
+  }
+
+  .add-to-cart button {
+    padding: 0.3rem;
+    font-size: 0.8rem;
+  }
 }
