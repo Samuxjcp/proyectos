@@ -269,3 +269,10 @@ main.main {
 #button_comprar:hover {
   background-color: #ffbf00;
 }
+
+.totalCompra {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}

@@ -156,6 +156,7 @@ document.addEventListener("DOMContentLoaded", e => {
     const sectionCarritoProducts = document.getElementById("carrito_products")
 
     const exitbtn = document.getElementById("button_exit")
+    const pTotal =document.getElementById("totalCompra")
 
     const btnComprar = document.getElementById("button_comprar")
     carritobtn.onclick = () => {
@@ -167,7 +168,12 @@ document.addEventListener("DOMContentLoaded", e => {
     }
 
     btnComprar.onclick = ()=> {
-        alert (carrito.calcularTotalCompra())
+        if (pTotal.style.display=== "none"){
+            pTotal.style.display = "block"
+            pTotal.innerText= `El total de compra es : ${carrito.calcularTotalCompra()}`
+        } else{
+            pTotal.style.display = "none"
+        }
     }
 
     renderizarProductos();
