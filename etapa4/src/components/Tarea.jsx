@@ -3,14 +3,14 @@ import styled from "styled-components";
 import TrashIcon from "./TrashIcon";
 import CheckIcon from "./CheckIcon";
 
-const Tarea = ({ tarea, completada }) => {
+const Tarea = ({ tarea, completada, alBorrar, alMarcar }) => {
   return (
     <FlexContainer>
       <TitleTarea completada={completada}>{tarea}</TitleTarea>
-      <IconContainer bg="green">
+      <IconContainer bg="green" onClick={alMarcar}>
         <CheckIcon />
       </IconContainer>
-      <IconContainer>
+      <IconContainer onClick={alBorrar}>
         <TrashIcon />
       </IconContainer>
     </FlexContainer>

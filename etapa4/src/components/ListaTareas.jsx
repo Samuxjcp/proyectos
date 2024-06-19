@@ -37,10 +37,16 @@ const ListaTareas = () => {
   };
 
   const borrarTarea = (id) => {
-    
+    setTareas(tareas.filter(t => t.id != id) )
   };
 
-  const marcarCompletada = (id) => {};
+  const marcarCompletada = (id) => {
+    const tareasActual = [ ...tareas ]
+    const tarea=tareasActual.findIndex(t=> t.id==id)
+
+    tareasActual[tarea].completada = !tareasActual[tarea].completada
+    setTareas (tareasActual)
+  };
 
   return (
     <Container>
@@ -51,12 +57,12 @@ const ListaTareas = () => {
           value={tituloTarea}
           onChange={(e) => setTituloTarea(e.target.value)}
         />
-        <AddIcon onClick={agregarTarea} />
+        <AddIcon style={{ cursor: "pointer" }}  onClick={agregarTarea} />
       </FlexContainer>
 
       <TareasContainer>
         {tareas.map((t) => (
-          <Tarea {...t} />
+          <Tarea {...t} alBorrar={() => borrarTarea(t.id)}  alMarcar={()=>marcarCompletada(t.id)}  />
         ))}
       </TareasContainer>
     </Container>
