@@ -57,7 +57,7 @@ const ListaTareas = () => {
           value={tituloTarea}
           onChange={(e) => setTituloTarea(e.target.value)}
         />
-        <AddIcon style={{ cursor: "pointer" }}  onClick={agregarTarea} />
+        <AddIcon style={{ cursor: "Pointer" }}  onClick={agregarTarea} />
       </FlexContainer>
 
       <TareasContainer>
@@ -76,16 +76,19 @@ const TareasContainer = styled.section`
 `;
 
 const Container = styled.div`
-  min-height: 60dvh;
-  background-color: #474646;
+ min-height: 60dvh;
+  background-color: #2e2e2e;
   min-width: 50dvh;
   padding: 20px;
   border-radius: 24px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 `;
 
 const Tittle = styled.h1`
-  font-size: 36px;
+ font-size: 36px;
   text-align: center;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
 `;
 
 const FlexContainer = styled.div`
@@ -94,18 +97,19 @@ const FlexContainer = styled.div`
   gap: 10px;
   align-items: center;
   padding: 15px;
-  border: 2px solid #e0e0e0;
+  border: 2px solid #bdbdbd;
   border-radius: 24px;
 `;
-
 const Input = styled.input`
-  width: 100%;
+ width: 100%;
   padding: 10px;
-  background-color: transparent;
+  background-color: #424242;
   border: none;
-  color: #e0e0e0;
+  color: #ffffff;
   font-size: 20px;
+  border-radius: 8px;
   outline: none;
+  font-family: 'Roboto', sans-serif;
 `;
 
 export default ListaTareas;
