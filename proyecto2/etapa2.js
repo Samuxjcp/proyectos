@@ -1,6 +1,7 @@
 // Obtiene los elementos del DOM por su ID y los asigna a variables.
 const email = document.getElementById("email");
 const password = document.getElementById("password");
+const usuario = document.getElementById("user")
 const form = document.getElementById("form");
 const aviso = document.getElementById("aviso");
 const avisoCorrecto = document.getElementById("avisoCorrecto");
@@ -16,6 +17,10 @@ form.addEventListener("submit", e => {
     aviso.innerHTML = "";
     avisoCorrecto.innerHTML = "";
 
+
+    if (usuario.value.length <1 || usuario.value.charAt(0).toUpperCase() != usuario.value.charAt(0)){
+        return mostrarError("usuario no valida el primer caracter tiene que esta en mayuscula")
+    }
     // Valida el correo electrónico usando la expresión regular.
     if (!regexEmail.test(email.value))
         return mostrarError(`El correo electrónico no es válido.`)
